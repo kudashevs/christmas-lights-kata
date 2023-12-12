@@ -81,4 +81,45 @@ describe('LightsGrid testsuite', () => {
       }
     }
   });
+
+  it('can toggle the lights in the first row', () => {
+    const grid = new LightsGrid(10, 10);
+    grid.toggle(0, 0, 9, 0);
+
+    for (let i = 0; i < 10; i++) {
+      for (let j = 0; j < 10; j++) {
+        if (j === 0) {
+          expect(grid.getLight(i, j).isOn()).toBe(true);
+        } else {
+          expect(grid.getLight(i, j).isOn()).toBe(false);
+        }
+      }
+    }
+  });
+
+  it('can toggle the lights it the first column', () => {
+    const grid = new LightsGrid(10, 10);
+    grid.toggle(0, 0, 0, 9);
+
+    for (let i = 0; i < 10; i++) {
+      for (let j = 0; j < 10; j++) {
+        if (i === 0) {
+          expect(grid.getLight(i, j).isOn()).toBe(true);
+        } else {
+          expect(grid.getLight(i, j).isOn()).toBe(false);
+        }
+      }
+    }
+  });
+
+  it('can turn off the middle lights (499,499 through 500,500)', () => {
+    const grid = new LightsGrid();
+    grid.toggle(499, 499, 500, 500);
+
+    for (let i = 499; i <= 500; i++) {
+      for (let j = 499; j <= 500; j++) {
+        expect(grid.getLight(i, j).isOn()).toBe(true);
+      }
+    }
+  });
 });

@@ -50,4 +50,12 @@ export class LightsGrid {
       }
     }
   }
+
+  public toggle(leftX: number, leftY: number, rightX: number, rightY: number): void {
+    for (let i = leftX; i <= rightX; i++) {
+      for (let j = leftY; j <= rightY; j++) {
+        (this.grid[i][j]).toggle();
+      }
+    }
+  }
 }
