@@ -58,4 +58,17 @@ export class LightsGrid {
       }
     }
   }
+
+  public countLit(): number {
+    let count: number = 0;
+    for (let i = 0; i < this.width; i++) {
+      for (let j = 0; j < this.height; j++) {
+        if ((this.grid[i][j]).isOn()) {
+          count++;
+        }
+      }
+    }
+
+    return count;
+  }
 }

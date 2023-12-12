@@ -122,4 +122,11 @@ describe('LightsGrid testsuite', () => {
       }
     }
   });
+
+  it('can count lit lights', () => {
+    const grid = new LightsGrid();
+    grid.toggle(0, 0, 999, 0);
+
+    expect(grid.countLit()).toBe(1000);
+  });
 });
