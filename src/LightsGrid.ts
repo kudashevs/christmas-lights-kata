@@ -1,8 +1,8 @@
 import {Light} from './Light';
 
 export class LightsGrid {
-  private width: number;
-  private height: number;
+  private readonly width: number;
+  private readonly height: number;
   private grid: Light[][];
 
   constructor(width: number = 1000, height: number = 1000) {
@@ -20,8 +20,6 @@ export class LightsGrid {
         arr[i][j] = new Light();
       }
     }
-
-    this.grid = arr;
   }
 
   public getHeight(): number {
