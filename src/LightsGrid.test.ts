@@ -24,4 +24,15 @@ describe('LightsGrid testsuite', () => {
       }
     }
   });
+
+  it('can turn on all of the lights', () => {
+    const grid = new LightsGrid(10, 10);
+    grid.turnOn(0, 0, 9, 9);
+
+    for (let i = 0; i < 10; i++) {
+      for (let j = 0; j < 10; j++) {
+        expect(grid.getLight(i, j).isOn()).toBe(true);
+      }
+    }
+  });
 });

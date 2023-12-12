@@ -34,4 +34,12 @@ export class LightsGrid {
   public getLight(x: number, y: number): Light {
     return this.grid[x][y];
   }
+
+  public turnOn(leftX: number, leftY: number, rightX: number, rightY: number): void {
+    for (let i = leftX; i <= rightX; i++) {
+      for (let j = leftY; j <= rightY; j++) {
+        (this.grid[i][j]).turnOn();
+      }
+    }
+  }
 }
