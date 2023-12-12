@@ -1,4 +1,4 @@
-import {LightsGrid} from "./LightsGrid";
+import {LightsGrid} from './LightsGrid';
 
 describe('LightsGrid testsuite', () => {
   it('can be instantiated with height/width', () => {
@@ -20,4 +20,4 @@ describe('LightsGrid testsuite', () => {
 
     expect(grid.getLight(5, 5).isOn()).toBe(false);
   });
-})
+});
