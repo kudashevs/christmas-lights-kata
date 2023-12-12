@@ -1,23 +1,24 @@
 import {Light} from './Light';
 
 export class LightsGrid {
-  private readonly width: number;
   private readonly height: number;
+  private readonly width: number;
   private grid: Light[][];
 
-  constructor(width: number = 1000, height: number = 1000) {
-    this.width = width;
+  constructor(height: number = 1000, width: number = 1000) {
     this.height = height;
+    this.width = width;
 
     this.populate();
   }
 
   private populate(): void {
-    let arr = new Array(this.width);
-    for (let i = 0; i < this.width; i++) {
-      arr[i] = new Array(this.height);
-      for (let j = 0; j < this.height; j++) {
-        arr[i][j] = new Light();
+    this.grid = [];
+
+    for (let i = 0; i < this.height; i++) {
+      this.grid[i] = [];
+      for (let j = 0; j < this.width; j++) {
+        this.grid[i][j] = new Light();
       }
     }
   }
