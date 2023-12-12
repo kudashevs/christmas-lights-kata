@@ -21,4 +21,14 @@ describe('Light testsuite', () => {
 
     expect(light.isOn()).toBe(false);
   });
+
+  it('can be toggled', () => {
+    const light = new Light();
+    light.toggle();
+
+    expect(light.isOn()).toBe(true);
+
+    light.toggle();
+    expect(light.isOn()).toBe(false);
+  });
 });

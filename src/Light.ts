@@ -12,4 +12,12 @@ export class Light {
   public turnOff(): void {
     this.state = false;
   }
+
+  public toggle(): void {
+    if (this.state === false) {
+      this.state = true;
+    } else {
+      this.state = false;
+    }
+  }
 }
