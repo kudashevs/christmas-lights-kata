@@ -65,4 +65,20 @@ describe('LightsGrid testsuite', () => {
       }
     }
   });
+
+  it('can turn off the lights in the first row', () => {
+    const grid = new LightsGrid(10, 10);
+    grid.turnOn(0, 0, 9, 9);
+    grid.turnOff(0, 0, 9, 0);
+
+    for (let i = 0; i < 10; i++) {
+      for (let j = 0; j < 10; j++) {
+        if (j === 0) {
+          expect(grid.getLight(i, j).isOn()).toBe(false);
+        } else {
+          expect(grid.getLight(i, j).isOn()).toBe(true);
+        }
+      }
+    }
+  });
 });
