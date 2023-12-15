@@ -1,15 +1,25 @@
+import {GridArea} from './GridArea';
+import {GridNavigator} from './GridNavigator';
 import {Light} from './Light';
+import {Navigator} from './Navigator';
 
 export class LightsGrid {
   private readonly height: number;
   private readonly width: number;
   private grid: Light[][];
+  private navigator: Navigator;
 
   constructor(height: number = 1000, width: number = 1000) {
+    this.initNavigator();
+
     this.height = height;
     this.width = width;
 
     this.populate();
+  }
+
+  private initNavigator(): void {
+    this.navigator = new GridNavigator();
   }
 
   private populate(): void {
@@ -36,27 +46,15 @@ export class LightsGrid {
   }
 
   public turnOn(leftX: number, leftY: number, rightX: number, rightY: number): void {
-    for (let i = leftX; i <= rightX; i++) {
-      for (let j = leftY; j <= rightY; j++) {
-        (this.grid[i][j]).turnOn();
-      }
-    }
+    this.navigator.invoke(this, 'turnOn', new GridArea(leftX, leftY, rightX, rightY));
   }
 
   public turnOff(leftX: number, leftY: number, rightX: number, rightY: number): void {
-    for (let i = leftX; i <= rightX; i++) {
-      for (let j = leftY; j <= rightY; j++) {
-        (this.grid[i][j]).turnOff();
-      }
-    }
+    this.navigator.invoke(this, 'turnOff', new GridArea(leftX, leftY, rightX, rightY));
   }
 
   public toggle(leftX: number, leftY: number, rightX: number, rightY: number): void {
-    for (let i = leftX; i <= rightX; i++) {
-      for (let j = leftY; j <= rightY; j++) {
-        (this.grid[i][j]).toggle();
-      }
-    }
+    this.navigator.invoke(this, 'toggle', new GridArea(leftX, leftY, rightX, rightY));
   }
 
   public countLit(): number {
