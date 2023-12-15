@@ -10,19 +10,18 @@ export class LightsGrid {
   private navigator: Navigator;
 
   constructor(height: number = 1000, width: number = 1000) {
-    this.initNavigator();
-
     this.height = height;
     this.width = width;
 
-    this.populate();
+    this.initNavigator();
+    this.populateGrid();
   }
 
   private initNavigator(): void {
     this.navigator = new GridNavigator();
   }
 
-  private populate(): void {
+  private populateGrid(): void {
     this.grid = [];
 
     for (let i = 0; i < this.height; i++) {
