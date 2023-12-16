@@ -41,9 +41,9 @@
       "html"
     ],
     "transform": {
-      "^.+\\.ts?$": "ts-jest"
+      "^.+\\.(ts|tsx)?$": "ts-jest"
     },
-    "testRegex": "(\\.|/)(test)\\.(js|tsx?)$",
+    "testRegex": "(\\.|/)(test|spec)\\.(js|tsx?)$",
     "moduleFileExtensions": [
       "ts",
       "js",
