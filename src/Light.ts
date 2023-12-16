@@ -1,23 +1,25 @@
 export class Light {
-  private state = false;
+  private state: number = 0;
 
   public isOn(): boolean {
-    return this.state;
+    return this.state > 0;
   }
 
   public turnOn(): void {
-    this.state = true;
+    this.state++;
   }
 
   public turnOff(): void {
-    this.state = false;
+    if (this.state > 0) {
+      this.state--;
+    }
   }
 
   public toggle(): void {
-    if (this.state === false) {
-      this.state = true;
-    } else {
-      this.state = false;
-    }
+    this.state += 2;
+  }
+
+  public getBrightness(): number {
+    return this.state;
   }
 }
