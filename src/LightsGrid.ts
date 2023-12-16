@@ -68,4 +68,16 @@ export class LightsGrid {
 
     return count;
   }
+
+  public countBrightness(): number {
+    let brightness: number = 0;
+
+    for (let i = 0; i < this.width; i++) {
+      for (let j = 0; j < this.height; j++) {
+        brightness += (this.grid[i][j]).getBrightness();
+      }
+    }
+
+    return brightness;
+  }
 }
