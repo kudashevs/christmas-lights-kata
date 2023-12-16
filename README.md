@@ -5,8 +5,8 @@ includes acceptance tests from the original kata. You can find the [original kat
 (a sixth assignment of the year 2015).
 
 The repository has two branches:
-- master - the branch contains a simple solution (it uses an iteration to apply different methods to lights in the grid).
-- navigator_featured - the branch contains a more complex solution (it uses a Navigator to perform the same operation).
+- [master](https://github.com/kudashevs/christmas-lights-kata/tree/master) - the branch contains a simple solution (it uses an iteration to apply different methods to lights in the grid).
+- [navigator_featured](https://github.com/kudashevs/christmas-lights-kata/tree/navigator_featured) - the branch contains a more complex solution (it uses a Navigator to perform the same operation).
 
 
 ## Installing dependencies
