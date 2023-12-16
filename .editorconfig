@@ -16,3 +16,6 @@ insert_final_newline = false
 quote_type = single
 indent_size = 2
 curly_bracket_next_line = false
+
+[*.{yml,yaml}]
+indent_size = 2
