@@ -9,10 +9,10 @@ export class LightsGrid {
     this.height = height;
     this.width = width;
 
-    this.populate();
+    this.populateGrid();
   }
 
-  private populate(): void {
+  private populateGrid(): void {
     this.grid = [];
 
     for (let i = 0; i < this.height; i++) {
