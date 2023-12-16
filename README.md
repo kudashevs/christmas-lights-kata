@@ -1,51 +1,23 @@
-# TypeScript Jest boilerplate
+# Christmas Light Kata
 
-This boilerplate uses TypeScript and Jest as testing framework.
-Test files should are picked based on their name, here's a few examples that will get picked up by Jest:
+A solution for the [Christmas Light Kata](https://kata-log.rocks/christmas-lights-kata) written in TypeScript. This solution
+includes acceptance tests from the original kata. You can find the [original kata](https://adventofcode.com/2015) on the Advent of Code site
+(a sixth assignment of the year 2015).
 
-- `MyClass.test.ts`
-- `MyJavaScriptModule.test.js`
-- `MyComponent.test.tsx`
-- `SubFolder/MyClass.test.ts`
+The repository has two branches:
+- master - the branch contains a simple solution (it uses an iteration to apply different methods to lights in the grid).
+- navigator_featured - the branch contains a more complex solution (it uses a Navigator to perform the same operation).
 
-You can customize the regexp and jest configuration by editing the `package.json` file.
 
 ## Installing dependencies
-
 ```bash
-# Get Yarn
-npm install -g yarn
-
 # Install dependencies
 yarn install
 ```
 
-## Running tests
 
+## Running tests
 ```bash
 # Run tests once
 yarn test
-
-# Run tests with Jest-CLI custom arguments (https://jestjs.io/docs/en/cli.html)
-yarn test --clearCache --debug
-
-# Run tests for a specific file
-yarn test MyFile.test.ts
-```
-
-A few other NPM scripts are provided for convenience, they all support custom arguments as described above.
-
-```
-# Run tests once with coverage
-# Coverage report available in ./coverage/index.html
-yarn test:cover
-
-# Run all tests in watch mode without coverage
-yarn test:watch
-
-# Run the tests with watch mode only for files changed since the last Git commit
-yarn test:changed
-
-# Run tests for CI environment (optimized for TravisCI)
-yarn test:ci
 ```
